@@ -1,1 +1,15 @@
+Errors Occurred: Terminal error solved by open in iyntergrated terminal
+
 This Doc is for NgForms
+Template Driven Forms
+Basics
+Binding
+Form Validation
+Post Req from Form(Http Posting)
+Async posting- Rxjs Observables.
+Third Party Controls
+
+1. Create form comp --> bootstrap -->Checkbox/ dropdowns --> Controls and action.
+--> Forms module:- Built in-->Alreadyused in import meta data
+Add imports of bootstrap in styles.css
+
