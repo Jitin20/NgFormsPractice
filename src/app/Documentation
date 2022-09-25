@@ -13,3 +13,91 @@ Third Party Controls
 --> Forms module:- Built in-->Alreadyused in import meta data
 Add imports of bootstrap in styles.css
 
+add a form
+div class form-group is used in bootstrap
+form-control --> Inout Field
+
+Label for is linekd with id in input tag
+so that clicking on label focuses on the input block.
+
+mb-3 is used in bootstrap instead of form-group class
+Checks and radio done from bootstrap
+sleect statement will get data from data service somewhwre from the backend hence it will use
+ngfor directive as well as async pipe to handle the asynchronous funtions.
+Type can be email, password, checkboxes done, radio buttns can aslo be used.
+
+==>Data Binding is used to bing data to the form. As the user click the save button, we need to take care of the data that we have entered in the form.
+ngForm
+-> <form #form =  "NgForm">
+</form>
+
+It have various inbuilt proeprties that helps user have the good user experience    
+form variable can be used any where using interpolation
+
+Angular should know about the value of the fueld, this can be dne by  ngModel directive
+In order to use interpolation with ngModel , we always need a na,e attribute with our input, select r interface tag. The name ="" will ebbshown in the value if  we print.
+
+In order to bind the data even from the service or from thw backeend to get the particular object from backend while creating the apps, we need to perform data binding along wihyht two way binding of the entries.
+
+So basically two way data binding is as same as banana iside the box
+It would be written like: [(ngModel)]="interface.name"
+As the user changes it would be inserted inside the particlar value field
+
+in order to copy the previous object we need to use the spred operator that is (...)
+
+... this.usersettings
+
+
+HTML5 Validation
+required attribute- marks the field as required
+pattern- defines a particular pattern for the field.
+minlength
+maxlength
+min 
+max
+
+ngNativeValidate allow browser to validate 
+pattern="[A-Z].*" to start with caps 
+.* means followed by any character
+
+CSS Validation
+ng-Untouched: field starts with this
+ng-touched: whenever we are at that field, whether we tab off that field or let it be pr post the field , but we are loosing the focus, hence ng-Untouched will be removed and it will acquire ng-touched class
+
+ng-pristine: unmodified- starts off with ths
+
+ng-dirty: whenever we enter value, it is dirty
+
+ng-valid: untill the validation is valid as per the valdiation tag, the class name will be ng-valid.
+ng-invalid: if the field is invalid the class name turn out to be invalid.
+Again interpolation will be done to check the status of the classes.
+
+while coming ti the editing of these classes, we simply remove the "ng-" and write the classes as it is.
+
+untouched
+dirty
+touched
+dirty
+pristine
+valid
+invalid
+
+
+assign a id for every ng model in order to do the validation styling.
+For ex: #nametest = "ngModel"
+
+To create service/component pr any thing inside a folder give name pf that folder   /   the name of the comp/service.
+
+While returning from observable of function will be used to pass back the data of the form
+To return the post we should give the observable type of any to handle them as they can be any type
+
+import httpclient module in the app.module.ts
+
+further in the service define the http client in the constructor
+
+now rather than returning the demo or fake data, return it to the serve with help of http client.
+
+return this.http.post('url', myform1)
+
+Watch from the sixth one
+..

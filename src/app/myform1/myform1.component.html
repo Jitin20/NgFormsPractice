@@ -1,4 +1,45 @@
-<form>
-    <input placeholder="name" type="text"/>
-    <button class="btn btn-primary">Submit</button>
-</form>
+<div class="container">
+  <h1>Register Here</h1>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input id="name" name="name" placeholder="Jitin Sharma" class="form-control" type="text" [(ngModel)]="myform.name"
+        required pattern="[A-Z].*" minlength="3" maxlength="15" #nametest = "ngModel">
+    </div>
+    <div class="form-text text-danger" *ngIf="nametest.errors?.['required']&&(nametest.dirty || nametest.touched)">Please enter your name</div>
+    <div class="form-text text-danger" *ngIf="nametest.errors?.['pattern']&&(nametest.invalid || nametest.dirty || nametest.touched)">Please enter the correct format. eg: Start your name with the Capital letter: Jitin</div>
+    <div class="form-text text-danger" *ngIf="nametest.errors?.['minlength']&&(nametest.invalid || nametest.dirty || nametest.touched)">Please enter the correct format. eg: minimum length should be 3, max length not more than 15</div>
+    <!-- <p>dirty:{{nametest.dirty}}</p>
+    <p>pristine:{{nametest.pristine}}</p>
+    <p>touched:{{nametest.touched}}</p>
+    <p>untouched:{{nametest.untouched}}</p>
+    <p>valid:{{nametest.valid}}</p>
+    <p>invalid:{{nametest.invalid}}</p> -->
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" name="Age Validation" value="" id="flexCheckDefault"
+        [(ngModel)]="myform.ageValidate" #validatecheck = "ngModel">
+      <label class="form-check-label" for="flexCheckDefault">
+        Above 18 years?
+      </label>
+    </div>
+    <div class="form-text text-danger" *ngIf="validatecheck.errors?.['required']&&(form.submitted || validatecheck.invalid)">Please select the checkbox</div>
+    <label for="select">Plans for you</label>
+    <select class="form-select mb-3" id="select" name="Plan" aria-label="Default select example"
+      [(ngModel)]="myform.plans">
+
+      <option selected>Select your plan </option>
+      <option value="1">Monthly</option>
+      <option value="2">Quarterly</option>
+      <option value="3">Yearly</option>
+    </select>
+
+    <div class="form-group mb-3">
+      <label for="notes">Enter your Query</label>
+      <textarea class="form-control" name="notes" id="notes" rows="3" [(ngModel)]="myform.notes"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{{form.value | json}}
